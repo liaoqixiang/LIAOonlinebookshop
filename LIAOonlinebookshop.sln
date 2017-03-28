@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeoBookShop.BLL", "LeoBookShop.BLL\LeoBookShop.BLL.csproj", "{5264A474-4E6B-4241-961E-64EB2FA19FDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeoBookShop.DAL", "LeoBookShop.DAL\LeoBookShop.DAL.csproj", "{E6B1B2E9-73D9-4EF9-A72A-192C697262D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeoBookShop.Model", "LeoBookShop.Model\LeoBookShop.Model.csproj", "{803F3447-64C9-48FA-9CC7-659F333A82CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeoBookShop.Utility", "LeoBookShop.Utility\LeoBookShop.Utility.csproj", "{090FE0ED-5BDC-4C5B-9548-9A03AA91E4C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{8B43EE6B-9AA0-490D-AFCA-80EEE30404C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeoBookShopUI", "LeoBookShopUI\LeoBookShopUI.csproj", "{9229A55E-155C-4D7F-8FA9-C8F1D22C6850}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5264A474-4E6B-4241-961E-64EB2FA19FDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5264A474-4E6B-4241-961E-64EB2FA19FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5264A474-4E6B-4241-961E-64EB2FA19FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5264A474-4E6B-4241-961E-64EB2FA19FDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6B1B2E9-73D9-4EF9-A72A-192C697262D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B1B2E9-73D9-4EF9-A72A-192C697262D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6B1B2E9-73D9-4EF9-A72A-192C697262D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6B1B2E9-73D9-4EF9-A72A-192C697262D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{803F3447-64C9-48FA-9CC7-659F333A82CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{803F3447-64C9-48FA-9CC7-659F333A82CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{803F3447-64C9-48FA-9CC7-659F333A82CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{803F3447-64C9-48FA-9CC7-659F333A82CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090FE0ED-5BDC-4C5B-9548-9A03AA91E4C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{090FE0ED-5BDC-4C5B-9548-9A03AA91E4C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{090FE0ED-5BDC-4C5B-9548-9A03AA91E4C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{090FE0ED-5BDC-4C5B-9548-9A03AA91E4C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B43EE6B-9AA0-490D-AFCA-80EEE30404C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B43EE6B-9AA0-490D-AFCA-80EEE30404C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B43EE6B-9AA0-490D-AFCA-80EEE30404C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B43EE6B-9AA0-490D-AFCA-80EEE30404C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9229A55E-155C-4D7F-8FA9-C8F1D22C6850}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9229A55E-155C-4D7F-8FA9-C8F1D22C6850}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9229A55E-155C-4D7F-8FA9-C8F1D22C6850}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9229A55E-155C-4D7F-8FA9-C8F1D22C6850}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

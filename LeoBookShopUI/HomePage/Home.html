@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+
+    <link href="/assets/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />    
+    <link href="../assets/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="../assets/css/homecss.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+            <div class="row h30 lh30 f14">
+                <nav class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-nav-demo">
+                            <ul class="nav navbar-nav navbar-left">
+                                <li><a href="../HomePage/Home.html"><i class="fa fa-bell" aria-hidden="true"></i>&nbsp;Home</a></li>
+                                <li><a href="/_BookMain/books.aspx"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;BookShop</a></li>
+                                <li><a href="../HomePage/About.html"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;About</a></li>
+                                
+                            </ul>
+
+
+                            <ul id="userstate" class="nav navbar-nav navbar-right">
+                                <li><a href="/Account/Register.aspx">Register <i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="/Account/Login.aspx">Sign In <i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+                                <li style="display:none"><a href="/HomePage/Home.html" onclick="signout()"><span class="glyphicon glyphicon-off"></span>&nbsp;Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+ 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="content">
+                    <h1>LEO'S HOME</h1>
+                    <h3>The BookShop</h3>
+                    <hr>
+                    <a href="../_BookMain/books.aspx" class="btn btn-default btn-lg"><i class="fa fa-paw" aria-hidden="true"></i>  Get Started</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="/assets/lib/jquery/jquery-1.11.0.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script>
+        $(function () {
+            testlogin();
+        });
+        function testlogin() {
+            $.post("/_BookMain/ashx/testLogin.ashx", {}, function (data) {
+                if (data == "yes") {
+                    $('#userstate').find('li:eq(1)').hide();
+                    $('#userstate').find('li:eq(2)').show();
+                }
+                else {
+                    $('#userstate').find('li:eq(2)').hide();
+                    $('#userstate').find('li:eq(1)').show();
+                }
+
+            });
+        }
+        function signout() {
+            $.post("/Account/Registerashx/signout.ashx", {}, function (data) {
+                location.replace("/HomePage/Home.html");
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="/assets/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link href="/assets/js/jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet" />
+    <link href="/assets/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+    <!--#header begins-->
+    <div class="container">
+        <div class="row h30 lh30 f14">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-nav-demo">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li><a href="/HomePage/Home.html"><i class="fa fa-bell" aria-hidden="true"></i>&nbsp;Home</a></li>
+                            <li><a href="/_BookMain/books.aspx"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;BookShop</a></li>
+                            <li><a href="/HomePage/About.html"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;About</a></li>
+
+                        </ul>
+
+
+                        <ul class="nav navbar-nav navbar-right" id="userstate">
+                            <li><a href="/Account/Register.aspx">Register&nbsp;<i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+                            <li><a href="/Account/Login.aspx">Sign In&nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+                            <li><a href="/_BookMain/shoppingcart.aspx">Cart&nbsp;<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                            <li style="display:none"><a href="#" onclick="signout()"><span class="glyphicon glyphicon-off" onclick="signout()"></span>&nbsp;Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!--/#header ends-->
+    <!-- Content starts -->
+    <div class="container f14" style="padding-top:50px">
+        <div class="row">
+            <div id="content" class="col-lg-12">
+                <div class="item-meta">
+                    <h1 class="meta-tit">STL高效编程（英文版）</h1>
+                    <div class="meta-situ">
+                        <div class="meta-magnifier pull-left">
+                            <img src="/images/BookCovers/9787111196242.jpg" onerror="this.src='/images/error.jpg'" style="width:100%;height:100%" />
+                        </div>
+                        <div class="meta-show pull-right">
+                            <h2 class="meta-maintit">STL高效编程（英文版）</h2>
+                            <div class="meta-reveal mb10">
+                                <ul>
+                                    <li class="reveal-tit">Author：</li>
+                                    <li class="reveal-sow">（美）迈耶斯  著</li>
+                                    <li class="reveal-tit">Price：</li>
+                                    <li class="reveal-sow rev-text-2">$32.00</li>
+                                </ul>
+                            </div>
+                            <div style="border-bottom: 1px dotted #ccc;"></div>
+                            <div class="meta-btn">
+                                <div class="quantity mb10">Amount：<input id="countofbook" type="number" name="numbercount" value="1" onchange="changecount(this)" />100 left</div>
+                                <div class="button-group">
+                                    <a href="/_BookMain/shoppingcart.aspx" onclick="processcart()" class="btn btn-danger btn-lg mr20">BuyNow</a>
+                                    <button type="button" onclick="processcart()" class="btn btn-addcart btn-lg mr20"><i class="fa fa-cart-plus" aria-hidden="true"></i>&nbsp;Add-To-Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <input type="hidden" name="name" value="5038" id="bookid" />
+                <div class="item-review" id="review">
+                    <div class="review-show mt15  p15">
+                        <ul class="nav nav-tabs detail-tabs" id="detail-tabs">
+                            <li class="active"><a href="#intro" data-toggle="tab">All Comments</a></li>
+                        </ul>
+                        <div class="tab-content p15">
+                            <div class="tab-pane active" id="all-eva">
+                                <div class="rev-list" id="commentclone">
+                                    <div class="user">
+                                        <div class="user-avatar">
+                                            <a href="" target="_blank">
+                                                <img alt="Anonymous" src="/assets/img/avatar.png" data-original="" style="display: inline;" />
+                                            </a>
+                                        </div>
+                                        <div class="user-name">
+                                            <a href="" target="_blank">Anonymous</a>
+                                        </div>
+                                    </div>
+                                    <div class="rev-item">
+                                        <div class="rev-top">
+                                            <i class="rev-star icon-main icon-eva-5"></i><span class="rev-date" id="dateandtime"></span>
+                                        </div>
+                                        <div class="rev-content">
+
+                                            <span id="msgcomment"></span>
+                                        </div>
+                                    </div>
+                                    <i class="corner icon-main icon-arrow"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row f14" style="margin-left:100px">
+                    <div class="form-group">
+                        <div class="col-sm-5">
+                            <textarea id="txtContent" class="form-control inputstl" rows="5" placeholder="Tell me your feeling"></textarea>
+                            <input type="button" value="Publish" id="btnAdd" class="reply_btn" onclick="publishcomment()" />
+                            <span id="txtMsg" style="font-size:14px;color:red"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contents End -->
+    <!--#footer begins-->
+    <div class="container f14">
+        <div class="row mt10">
+            <div class="col-lg-12 help-center">
+                <ul class="help-list">
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-1 pull-left"></i>About Us</li>
+                            <li class="ontext"><a href="#">About Leo</a></li>
+                            <li class="ontext"><a href="#">Contact Us</a></li>
+                            <li class="ontext"><a href="#">Join Us</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-2 pull-left"></i>Shopping</li>
+                            <li class="ontext"><a href="#">Process</a></li>
+                            <li class="ontext"><a href="#">Service</a></li>
+                            <li class="ontext"><a href="#">Coupon</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-3 pull-left"></i>Payment</li>
+                            <li class="ontext"><a href="#">UniPay</a></li>
+                            <li class="ontext"><a href="#">Paybal</a></li>
+                            <li class="ontext"><a href="#">AliPay</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-4 pull-left"></i>Delivery</li>
+                            <li class="ontext"><a href="#">Delivery Fee</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-5 pull-left"></i>After Buying</li>
+                            <li class="ontext"><a href="#">Replace</a></li>
+                            <li class="ontext"><a href="#">Process</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-6 pull-left"></i>Help</li>
+                            <li class="ontext"><a href="#">General</a></li>
+                            <li class="ontext"><a href="#">Complaint</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="tc lh200">
+                <a href="#">About Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="">Contact Us</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <br />
+                CopyRight <a href="http://www.miibeian.gov.cn/" target="_blank" rel="external nofollow">Leo</a> ©Leo<br>
+                CopyRight
+            </p>
+        </div>
+    </footer>
+    <!--#footer ends-->
+    
+    <!--#dialog begins-->
+    <div id="dialog" title="Congraduation" class="f14">
+        books added successfully, please go to <a href="/_BookMain/shoppingcart.aspx" style="color: brown">cart</a> to check out
+        or <a href="/_BookMain/books.aspx" style="color: brown">Keep shopping</a>
+    </div>
+    <div id="dialog1" title="Sign In" class="f14">
+        <div class="col-lg-12 f14">
+            <!-- Login Form -->
+            <div class="form-group">
+                <label for="username">Email/UserAccount</label>
+                <input type="text" class="form-control" name="UserName" placeholder="Email/UserAccount" />
+            </div>
+            <div class="form-group">
+                <label for="password">PassWord</label>
+                <input type="password" class="form-control" name="UserPass" placeholder="PassWord" />
+            </div>
+            <input type="checkbox" id="usercookie" value="1" />Remember me
+        </div>
+        <input type="button" name="" value="Login" onclick="checklogin()" class="btn btn-addcart btn-block" />
+        <span id="finalmsg"></span>
+    </div>
+    <!--#dialog ends-->
+
+    <!--jquery starts-->
+    <script src="/assets/lib/jquery/jquery-1.11.0.js"></script>
+    <script src="/assets/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="/assets/js/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="/assets/js/processcart.js"></script>
+    <script type="text/javascript">
+        function testlogin() {
+            $.post("/_BookMain/ashx/testLogin.ashx", {}, function (data) {
+                if (data == "yes") {
+                    $('#userstate').find('li:eq(1)').hide();
+                    $('#userstate').find('li:eq(2)').show();
+                    $('#userstate').find('li:eq(3)').show();
+                }
+                else {
+                    $('#userstate').find('li:eq(1)').show();
+                    $('#userstate').find('li:eq(2)').hide();
+                    $('#userstate').find('li:eq(3)').hide();
+                }
+
+            });
+        }
+        function signout() {
+            $.post("/Account/Registerashx/signout.ashx", {}, function (data) {
+                location.replace("/HomePage/Home.html");
+            });
+        }
+        function loadcomment() {
+            $.post("/_BookMain/ashx/BookComment.ashx", { "action": "load", "book": 5038 }, function (data) {
+                var serverData = jQuery.parseJSON(data);
+                if (serverData.length == 0) {
+                    $('#all-eva').find('div').first().remove();
+                }
+                for (var i = 0; i < serverData.length; i++) {
+                    $("#dateandtime").text(serverData[i].CreateTime)
+                    $("#msgcomment").text(serverData[i].Msg)
+                    $("#commentclone").clone().appendTo("#all-eva");
+                }
+                $('#all-eva').find('div').first().remove();
+            });
+        }
+        function publishcomment() {
+            var content = $("#txtContent").val();
+            if (content.length > 40) {
+                $("#txtMsg").text("too long")
+                check();
+                return;
+            }
+            if (content != "") {
+                $.post("/_BookMain/ashx/BookComment.ashx", { "action": "CommentBooks", "comment": content, "bookid": 5038 }, function (data) {
+                    var serverdatacomment = data.split(":");
+                    if (serverdatacomment[0] == "no") {
+                        $("#txtMsg").text(serverdatacomment[1]);
+                        check();
+                    }
+                    else {
+                        $("#txtContent").focus();
+                        var serverData = $.parseJSON(data);
+                        $("#dateandtime").text(serverData[0].CreateTime)
+                        $("#msgcomment").text(serverData[0].Msg)
+                        $("#commentclone").clone().prependTo("#all-eva");
+                        location.reload();
+                        $("#txtMsg").text("Comment Successful")
+                        check();
+                    }
+                });
+            }
+            else {
+                $("#txtMsg").text("input something");
+                $("#txtContent").focus();
+                check();
+                return;
+            }
+
+        }
+        function processcart() {
+            var bookcount = $("#countofbook").val()
+            $.post("/_BookMain/ashx/ProcessCart.ashx", { "bookId": 5038, "countofbook": bookcount }, function (data) {
+                if (data == "no") {
+                    $("#dialog1").dialog("open");
+                }
+                else if (data == "yes") {
+                    $("#dialog").dialog("open");
+                }
+
+            });
+        }
+        function changecount(control) {
+
+            var count = parseInt($(control).val());
+            if (count < 1) {
+                $(control).val(1);
+                count = $(control).val();
+            }
+            else if (count > 10) {
+                $(control).val(10);
+                count = $(control).val();
+            }
+        }
+        function checklogin() {
+            if ($("#usercookie").prop('checked') == true) {
+                $('#usercookie').val(2);
+
+            }
+            else {
+                $('#usercookie').val(1);
+            }
+
+            $.post("/_BookMain/ashx/checkLogin.ashx", { "username": $('input[name=UserName]').val(), "userpwd": $('input[name=UserPass]').val(), "checkcookie": $('#usercookie').val() }, function (data) {
+                $("#finalmsg").text(data);
+                if (data == "Login Successfully") {
+                    $('#userstate').find('li:eq(1)').hide();
+                    $('#userstate').find('li:eq(2)').show();
+                }
+                setTimeout(function () {
+                    $("#dialog1").dialog("close");
+                    $("#finalmsg").text('');
+                }, 1500)
+
+            });
+
+        }
+        function check() {
+            setTimeout(function () {
+                $("#txtMsg").text("");
+
+            }, 2000)
+
+        }
+    </script>
+
+</body>
+</html>

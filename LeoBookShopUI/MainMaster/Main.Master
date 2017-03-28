@@ -1,0 +1,162 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="LeoBookShopUI.MainMaster.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="/assets/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="/assets/css/style.css" rel="stylesheet" />
+    <link href="/assets/css/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/css/match.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <!--#header begins-->
+    <div class="container">
+        <div class="row h30 lh30 f14">
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-nav-demo">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li><a href="../HomePage/Home.html"><i class="fa fa-bell" aria-hidden="true"></i>&nbsp;Home</a></li>
+                            <li><a href="../_BookMain/books.aspx"><i class="fa fa-book" aria-hidden="true"></i>&nbsp;BookShop</a></li>
+                            <li><a href="../HomePage/About.html"><i class="fa fa-info-circle" aria-hidden="true"></i>&nbsp;About</a></li>
+
+                        </ul>
+
+
+                        <ul id="signchange" class="nav navbar-nav navbar-right">
+                            <li><a href="../Account/Register.aspx">Register&nbsp;<i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+                            <%if (Session["userInfo"] == null && Context.Request.Cookies["cp1"] == null)
+                                {%>
+                            <li id="testsignin"><a href="../Account/Login.aspx">Sign In&nbsp;<i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+
+
+                            <%}%>
+                            <%else if (Context.Request.Cookies["cp1"] != null)
+                                {%>
+                            <li><a href="../_BookMain/shoppingcart.aspx">Cart&nbsp;<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                            <li><a href="#" onclick="signout()"><span class="glyphicon glyphicon-off"></span>&nbsp;Sign Out</a></li>
+                            <%} %>
+                            <%else
+                                { %>
+                            <li><a href="../_BookMain/shoppingcart.aspx">Cart<i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                            <li><a href="/HomePage/Home.html" onclick="signout()"><span class="glyphicon glyphicon-off"></span>&nbsp;Sign Out</a></li>
+                            <%} %>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!--/#header ends-->
+
+    
+
+
+
+
+    <!--content for other pages to share-->
+    <asp:ContentPlaceHolder ID="Content" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <!--#footer begins-->
+    <div class="container">
+        <div class="row mt10">
+            <div class="col-lg-12 help-center">
+                <ul class="help-list">
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-1 pull-left"></i>About Us</li>
+                            <li class="ontext"><a href="#">About Leo</a></li>
+                            <li class="ontext"><a href="#">Contact Us</a></li>
+                            <li class="ontext"><a href="#">Join Us</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-2 pull-left"></i>Shopping</li>
+                            <li class="ontext"><a href="#">Process</a></li>
+                            <li class="ontext"><a href="#">Service</a></li>
+                            <li class="ontext"><a href="#">Coupon</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-3 pull-left"></i>Payment</li>
+                            <li class="ontext"><a href="#">UniPay</a></li>
+                            <li class="ontext"><a href="#">Paybal</a></li>
+                            <li class="ontext"><a href="#">AliPay</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-4 pull-left"></i>Delivery</li>
+                            <li class="ontext"><a href="#">Delivery Fee</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-5 pull-left"></i>After Buying</li>
+                            <li class="ontext"><a href="#">Replace</a></li>
+                            <li class="ontext"><a href="#">Process</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="help-on">
+                            <li class="ontitle"><i class="icon-main icon-help-6 pull-left"></i>Help</li>
+                            <li class="ontext"><a href="#">General</a></li>
+                            <li class="ontext"><a href="#">Complaint</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="tc lh200">
+                <a href="../HomePage/About.html">About Me</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="#">Contact Me</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <br />
+                CopyRight <a href="#" target="_blank" rel="external nofollow">Leo</a> ©Leo<br />
+                CopyRight 
+            </p>
+        </div>
+    </footer>
+
+    <!--#footer ends-->
+    <script src="/assets/lib/jquery/jquery-1.11.0.js"></script>
+    <script src="/assets/lib/bootstrap/js/bootstrap.js"></script>
+    <script>
+
+        function signout() {
+            $.post("/Account/Registerashx/signout.ashx", {}, function (data) {
+                location.replace("/HomePage/Home.html");
+            })
+        }
+    </script>
+
+
+    <!--javascript and jquery for each pages-->
+    <asp:ContentPlaceHolder ID="footer" runat="server">
+    </asp:ContentPlaceHolder>
+   
+</body>
+</html>

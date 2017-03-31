@@ -16,8 +16,8 @@ Asp.Net webform bookshop
 Technology:
 1. DataBase: MSSQL
 2. Access to Database FrameWork: Ado.Net(My second project use EF ORM)
-3. Front-end: Jquery(to ajaxifyling my web App) and Bootstrap
-4. BackEnd: c#.Net, Asp.Net WebForm, using Generic handler to deal with authentication and jquery ajax since i dont need to show anything, ashx is a more efficient way of implementing it accroding to Asp.Net Request Flow.
+3. Front-end: Jquery(to ajaxifyling my web App) and Bootstrap，Asp.Net WebForm, using Generic handler to deal with authentication and jquery ajax since i dont need to show anything, ashx is a more efficient way of implementing it accroding to Asp.Net Request Flow.
+4. BackEnd: c#.Net, 
 5. Not using any Controls in my project since original web development gives me more flexibility and expansibility.
 6. Although webform aspx has tight coupling, it is much more convenient than Asp.Net MVC.
 7. I also use static html page to store detail of books which can release a lot of server side pressure.
